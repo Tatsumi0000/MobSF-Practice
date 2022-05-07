@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: main
 
+# GITHUB_TOKENの権限を設定できる
+permissions:
+  security-events: write # sarifファイルをアップロードするのに必要
+
 jobs:
   mobsfscan:
     runs-on: ubuntu-latest

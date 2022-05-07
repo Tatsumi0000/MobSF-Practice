@@ -15,6 +15,10 @@ import com.example.mobsf_android.ui.theme.MobSFAndroidTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // MobSFが反応するようにわざとパスワードをハードコーディングする = 脆弱性を仕込む
+        val password = "strong password"
+
         setContent {
             MobSFAndroidTheme {
                 // A surface container using the 'background' color from the theme

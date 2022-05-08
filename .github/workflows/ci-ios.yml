@@ -31,15 +31,18 @@ jobs:
       run: |
         mobsfscan MobSF-iOS --sarif --output results.sarif || true
 
-    - name: gzip
-      run: |
-        gzip -c results.sarif | base64 -w0
+    # - name: gzip
+    #   id: gizp
+    #   run: |
+    #     'BASE_64'=gzip -c results.sarif | base64 -w0
 
     # https://docs.github.com/ja/rest/code-scanning#upload-an-analysis-as-sarif-data
     - name: Upload mobsfscan report
       run: |
+        BASE_64=gzip -c results.sarif | base64 -w0
         curl -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -d "{"ref": "${{ github.ref }}", "commit_sha": "${{ github.sha }}", "sarif": ${{ BASE_64 }}}"
           -F "file=@results.sarif" \
           https://api.github.com/repos/Tatsumi0000/MobSF-Practice/code-scanning/sarifs

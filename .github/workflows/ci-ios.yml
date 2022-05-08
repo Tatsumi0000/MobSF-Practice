@@ -40,8 +40,8 @@ jobs:
     # https://docs.github.com/ja/rest/code-scanning#upload-an-analysis-as-sarif-data
     - name: Upload mobsfscan report
       run: |
-        curl -X POST \
+        curl -i -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -d "{\"commit_sha\": "${{ github.sha }}", \"ref\": "${{ github.ref }}", \"sarif\": "${{ steps.gzip.outputs.SARIF }}"}" \
+          -d '{"commit_sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "sarif": "${{ steps.gzip.outputs.SARIF }}"}' \
           https://api.github.com/repos/Tatsumi0000/MobSF-Practice/code-scanning/sarifs

@@ -15,6 +15,8 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    let password = "strong password"
+    
     static var previews: some View {
         ContentView()
     }

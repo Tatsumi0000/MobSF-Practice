@@ -1,10 +1,8 @@
 name: mobsfscan ios
 on:
   push:
-    branches: 
-      - main
-    # paths:
-    #   - 'MobSF-iOS/**'
+    paths:
+      - 'MobSF-iOS/**'
 
 # GITHUB_TOKENの権限を設定できる
 permissions:

@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // MobSFが反応するようにわざとパスワードをハードコーディングする = 脆弱性を仕込む
+        // MobSFが反応するようにわざとパスワードをハードコーディングする
         val password = "strong password"
 
         setContent {

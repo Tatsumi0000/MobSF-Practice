@@ -1,9 +1,8 @@
 name: mobsfscan android
 on:
   push:
-    branches: main
-  pull_request:
-    branches: main
+    paths:
+      - 'MobSF-Android/**'
 
 # GITHUB_TOKENの権限を設定できる
 permissions:

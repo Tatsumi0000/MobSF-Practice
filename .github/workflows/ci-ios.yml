@@ -35,7 +35,7 @@ jobs:
       id: gizp
       run: |
         SARIF=$(gzip -c results.sarif | base64 -w0)
-        echo "::set-output name=SARIF::${SARIF}"
+        echo "::set-output name=SARIF::$SARIF"
         echo $SARIF
 
     # https://docs.github.com/ja/rest/code-scanning#upload-an-analysis-as-sarif-data

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    /// わざとパスワードをハードコーディングしてみる
+    let password = "strong password"
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
@@ -15,8 +18,6 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    /// わざとパスワードをハードコーディングしてみる
-    let password = "strong password"
     
     static var previews: some View {
         ContentView()
